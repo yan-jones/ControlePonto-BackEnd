@@ -25,9 +25,10 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.com.enumeration.Perfil;
 import br.com.enumeration.Sexo;
@@ -43,6 +44,7 @@ import br.com.enumeration.Status;
 // p.nome, p.cpf, p.email, p.dataNascimento, p.sexo, p.perfil) from Pessoa p
 // where p.status = ?1 order by p.perfil") })
 @JsonInclude(value = Include.NON_NULL)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public abstract class Pessoa implements Serializable {
 
 	/**
@@ -116,7 +118,6 @@ public abstract class Pessoa implements Serializable {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "ID_BIOMETRIA", nullable = false)
 	@NotNull
-	@JsonBackReference
 	private Biometria biometria;
 
 	public Pessoa() {

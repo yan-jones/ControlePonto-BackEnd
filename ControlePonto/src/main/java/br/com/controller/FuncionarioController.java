@@ -53,7 +53,7 @@ public class FuncionarioController {
 
 	@RequestMapping(value = { "/funcionarios" }, method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Object> getAllo() {
+	public ResponseEntity<Object> getAll() {
 		return getFuncionarioService().getAll();
 	}
 

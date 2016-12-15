@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,6 +25,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -113,8 +113,10 @@ public abstract class Pessoa implements Serializable {
 	@NotNull
 	private Conta conta;
 
-	@OneToOne(mappedBy = "pessoa", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "ID_BIOMETRIA", nullable = false)
+	@NotNull
+	@JsonBackReference
 	private Biometria biometria;
 
 	public Pessoa() {

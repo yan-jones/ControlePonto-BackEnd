@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -39,9 +38,7 @@ public class Biometria implements Serializable {
 	@NotNull
 	private Long numero;
 
-	@OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID_PESSOA", nullable = false)
-	@NotNull
+	@OneToOne(mappedBy = "biometria", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private Pessoa pessoa;
 
 	@OneToMany(mappedBy = "biometria", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)

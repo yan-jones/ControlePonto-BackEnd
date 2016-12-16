@@ -8,4 +8,5 @@ import br.com.entity.Biometria;
 @Repository
 public interface BiometriaDAO extends CrudRepository<Biometria, Integer> {
 
+	public Biometria findByNumero(Long numero);
 }

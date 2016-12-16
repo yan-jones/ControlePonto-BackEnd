@@ -11,7 +11,7 @@ import br.com.service.PessoaService;
 public class PessoaController {
 
 	@Autowired
-	protected PessoaService pessoaService;
+	private PessoaService pessoaService;
 
 	public PessoaService getPessoaService() {
 		return pessoaService;

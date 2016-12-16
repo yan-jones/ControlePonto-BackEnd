@@ -17,7 +17,7 @@ import br.com.service.AlunoService;
 public class AlunoController {
 
 	@Autowired
-	protected AlunoService alunoService;
+	private AlunoService alunoService;
 
 	public AlunoService getAlunoService() {
 		return alunoService;

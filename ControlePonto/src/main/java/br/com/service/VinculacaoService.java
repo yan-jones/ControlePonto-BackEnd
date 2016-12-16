@@ -9,7 +9,7 @@ import br.com.dao.VinculacaoDAO;
 public class VinculacaoService {
 
 	@Autowired
-	protected VinculacaoDAO vinculacaoDAO;
+	private VinculacaoDAO vinculacaoDAO;
 
 	public VinculacaoDAO getVinculacaoDAO() {
 		return vinculacaoDAO;

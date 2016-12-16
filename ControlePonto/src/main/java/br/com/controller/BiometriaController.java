@@ -17,7 +17,7 @@ import br.com.service.BiometriaService;
 public class BiometriaController {
 
 	@Autowired
-	protected BiometriaService biometriaService;
+	private BiometriaService biometriaService;
 
 	public BiometriaService getBiometriaService() {
 		return biometriaService;

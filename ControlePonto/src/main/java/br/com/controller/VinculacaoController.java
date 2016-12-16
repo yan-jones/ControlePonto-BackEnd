@@ -11,7 +11,7 @@ import br.com.service.VinculacaoService;
 public class VinculacaoController {
 
 	@Autowired
-	protected VinculacaoService vinculacaoService;
+	private VinculacaoService vinculacaoService;
 
 	public VinculacaoService getVinculacaoService() {
 		return vinculacaoService;

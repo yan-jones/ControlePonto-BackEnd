@@ -14,7 +14,7 @@ import br.com.entity.Biometria;
 public class BiometriaService {
 
 	@Autowired
-	protected BiometriaDAO biometriaDAO;
+	private BiometriaDAO biometriaDAO;
 
 	public BiometriaDAO getBiometriaDAO() {
 		return biometriaDAO;
@@ -35,33 +35,35 @@ public class BiometriaService {
 		}
 	}
 
-//	public ResponseEntity<Object> update(Biometria dados) {
-//		try {
-//			Biometria biometria = getBiometriaDAO().findOne(dados.getId());
-//
-//			// Dados do objeto Biometria
-//			biometria.setNumero(dados.getNumero());
-//
-//			biometria = getBiometriaDAO().save(biometria);
-//
-//			return new ResponseEntity<Object>(biometria, HttpStatus.CREATED);
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//			e.printStackTrace();
-//			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
+	// public ResponseEntity<Object> update(Biometria dados) {
+	// try {
+	// Biometria biometria = getBiometriaDAO().findOne(dados.getId());
+	//
+	// // Dados do objeto Biometria
+	// biometria.setNumero(dados.getNumero());
+	//
+	// biometria = getBiometriaDAO().save(biometria);
+	//
+	// return new ResponseEntity<Object>(biometria, HttpStatus.CREATED);
+	// } catch (Exception e) {
+	// System.out.println(e.getMessage());
+	// e.printStackTrace();
+	// return new ResponseEntity<Object>(e.getMessage(),
+	// HttpStatus.INTERNAL_SERVER_ERROR);
+	// }
+	// }
 
-//	public ResponseEntity<Object> delete(Integer id) {
-//		try {
-//			getBiometriaDAO().delete(id);
-//			return new ResponseEntity<Object>(HttpStatus.NO_CONTENT);
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//			e.printStackTrace();
-//			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
+	// public ResponseEntity<Object> delete(Integer id) {
+	// try {
+	// getBiometriaDAO().delete(id);
+	// return new ResponseEntity<Object>(HttpStatus.NO_CONTENT);
+	// } catch (Exception e) {
+	// System.out.println(e.getMessage());
+	// e.printStackTrace();
+	// return new ResponseEntity<Object>(e.getMessage(),
+	// HttpStatus.INTERNAL_SERVER_ERROR);
+	// }
+	// }
 
 	public ResponseEntity<Object> getBiometria(Integer id) {
 		try {

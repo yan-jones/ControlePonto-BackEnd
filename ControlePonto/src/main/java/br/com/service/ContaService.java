@@ -9,7 +9,7 @@ import br.com.dao.ContaDAO;
 public class ContaService {
 
 	@Autowired
-	protected ContaDAO contaDAO;
+	private ContaDAO contaDAO;
 
 	public ContaDAO getContaDAO() {
 		return contaDAO;

@@ -11,7 +11,7 @@ import br.com.service.ContaService;
 public class ContaController {
 
 	@Autowired
-	protected ContaService contaService;
+	private ContaService contaService;
 
 	public ContaService getContaService() {
 		return contaService;

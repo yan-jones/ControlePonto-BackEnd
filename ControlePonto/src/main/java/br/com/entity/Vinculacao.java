@@ -49,12 +49,12 @@ public class Vinculacao implements Serializable {
 	@Past
 	private Timestamp dataFinal;
 
-	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_PESSOA", nullable = false)
 	@NotNull
 	private Pessoa pessoa;
 
-	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_EQUIPAMENTO", nullable = false)
 	@NotNull
 	private Equipamento equipamento;

@@ -12,7 +12,7 @@ import br.com.entity.Endereco;
 public class EnderecoService {
 
 	@Autowired
-	protected EnderecoDAO enderecoDAO;
+	private EnderecoDAO enderecoDAO;
 
 	public EnderecoDAO getEnderecoDAO() {
 		return enderecoDAO;

@@ -17,7 +17,7 @@ import br.com.service.FuncionarioService;
 public class FuncionarioController {
 
 	@Autowired
-	protected FuncionarioService funcionarioService;
+	private FuncionarioService funcionarioService;
 
 	public FuncionarioService getFuncionarioService() {
 		return funcionarioService;

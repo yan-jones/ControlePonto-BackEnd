@@ -9,7 +9,7 @@ import br.com.dao.PessoaDAO;
 public class PessoaService {
 
 	@Autowired
-	protected PessoaDAO pessoaDAO;
+	private PessoaDAO pessoaDAO;
 
 	public PessoaDAO getPessoaDAO() {
 		return pessoaDAO;

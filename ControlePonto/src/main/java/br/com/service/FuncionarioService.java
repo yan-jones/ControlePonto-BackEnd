@@ -14,7 +14,7 @@ import br.com.entity.Funcionario;
 public class FuncionarioService {
 
 	@Autowired
-	protected FuncionarioDAO funcionarioDAO;
+	private FuncionarioDAO funcionarioDAO;
 
 	public FuncionarioDAO getFuncionarioDAO() {
 		return funcionarioDAO;

@@ -17,7 +17,7 @@ import br.com.service.EquipamentoService;
 public class EquipamentoController {
 
 	@Autowired
-	protected EquipamentoService equipamentoService;
+	private EquipamentoService equipamentoService;
 
 	public EquipamentoService getEquipamentoService() {
 		return equipamentoService;

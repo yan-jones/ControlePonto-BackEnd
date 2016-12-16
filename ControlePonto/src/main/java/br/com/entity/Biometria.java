@@ -41,10 +41,10 @@ public class Biometria implements Serializable {
 	@NotNull
 	private Long numero;
 
-	@OneToOne(mappedBy = "biometria", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "biometria", cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	private Pessoa pessoa;
 
-	@OneToMany(mappedBy = "biometria", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "biometria", cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	private List<Controle> controle;
 
 	public Biometria() {

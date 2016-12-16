@@ -14,7 +14,7 @@ import br.com.entity.Equipamento;
 public class EquipamentoService {
 
 	@Autowired
-	protected EquipamentoDAO equipamentoDAO;
+	private EquipamentoDAO equipamentoDAO;
 
 	public EquipamentoDAO getEquipamentoDAO() {
 		return equipamentoDAO;

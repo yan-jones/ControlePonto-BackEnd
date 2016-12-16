@@ -15,8 +15,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "CONTROLE")
@@ -27,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 // and c.dataSaida between ?2 and ?3 order by c.pessoa.nome, c.dataEntrada desc,
 // c.dataSaida desc") })
 @JsonInclude(value = Include.NON_NULL)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Controle implements Serializable {
 
 	/**
@@ -52,12 +55,17 @@ public class Controle implements Serializable {
 	// timezone = "GMT-3")
 	private Timestamp dataSaida;
 
-	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_BIOMETRIA", nullable = false)
 	@NotNull
 	private Biometria biometria;
 
 	public Controle() {
+	}
+
+	public Controle(Timestamp dataEntrada, Biometria biometria) {
+		setDataEntrada(dataEntrada);
+		setBiometria(biometria);
 	}
 
 	public Controle(Timestamp dataEntrada, Timestamp dataSaida, Biometria biometria) {

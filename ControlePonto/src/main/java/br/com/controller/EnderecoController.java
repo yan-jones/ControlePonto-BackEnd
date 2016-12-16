@@ -15,7 +15,7 @@ import br.com.service.EnderecoService;
 public class EnderecoController {
 
 	@Autowired
-	protected EnderecoService enderecoService;
+	private EnderecoService enderecoService;
 
 	public EnderecoService getEnderecoService() {
 		return enderecoService;

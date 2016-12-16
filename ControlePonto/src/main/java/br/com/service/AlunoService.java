@@ -14,7 +14,7 @@ import br.com.entity.Aluno;
 public class AlunoService {
 
 	@Autowired
-	protected AlunoDAO alunoDAO;
+	private AlunoDAO alunoDAO;
 
 	public AlunoDAO getAlunoDAO() {
 		return alunoDAO;

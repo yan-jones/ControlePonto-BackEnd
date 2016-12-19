@@ -51,6 +51,21 @@ public class Biometria implements Serializable {
 		setControle(new ArrayList<Controle>());
 	}
 
+	public Biometria(Long numero, String nome) {
+		setNumero(numero);
+		setPessoa(new Pessoa(nome) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 4594328915929200422L;
+
+			@Override
+			public void setNome(String nome) {
+				super.setNome(nome);
+			}
+		});
+	}
+
 	public Biometria(Long numero, Pessoa pessoa, List<Controle> controle) {
 		setNumero(numero);
 		setPessoa(pessoa);

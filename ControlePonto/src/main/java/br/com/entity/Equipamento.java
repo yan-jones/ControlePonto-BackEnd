@@ -22,8 +22,6 @@ import br.com.enumeration.TipoEquipamento;
 
 @Entity
 @Table(name = "EQUIPAMENTO")
-// @NamedQueries({ @NamedQuery(name = "RelatorioEquipamentos", query = "from
-// Equipamento e order by e.tipo") })
 @JsonInclude(value = Include.NON_NULL)
 public class Equipamento implements Serializable {
 

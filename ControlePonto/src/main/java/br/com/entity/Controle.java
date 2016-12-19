@@ -22,12 +22,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "CONTROLE")
-// @NamedQueries({
-// @NamedQuery(name = "RelatorioPresenca", query = "select new
-// Controle(c.pessoa.id, c.pessoa.nome, c.id, c.dataEntrada, c.dataSaida) from
-// Controle c where c.pessoa.nome like ?1 and c.dataEntrada between ?2 and ?3
-// and c.dataSaida between ?2 and ?3 order by c.pessoa.nome, c.dataEntrada desc,
-// c.dataSaida desc") })
 @JsonInclude(value = Include.NON_NULL)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Controle implements Serializable {
@@ -72,6 +66,15 @@ public class Controle implements Serializable {
 		setDataEntrada(dataEntrada);
 		setDataSaida(dataSaida);
 		setBiometria(biometria);
+	}
+
+	// c.biometria.numero, c.biometria.pessoa.nome, c.id, c.dataEntrada,
+	// c.dataSaida
+	public Controle(Integer id, Timestamp dataEntrada, Timestamp dataSaida, Long numero, String nome) {
+		setId(id);
+		setDataEntrada(dataEntrada);
+		setDataSaida(dataSaida);
+		setBiometria(new Biometria(numero, nome));
 	}
 
 	public Controle(Integer id, Timestamp dataEntrada, Timestamp dataSaida, Biometria biometria) {

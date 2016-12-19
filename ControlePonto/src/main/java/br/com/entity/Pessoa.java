@@ -37,12 +37,6 @@ import br.com.enumeration.Status;
 @Entity
 @Table(name = "PESSOA")
 @Inheritance(strategy = InheritanceType.JOINED)
-// @NamedQueries({
-// @NamedQuery(name = "ComboPessoas", query = "select new Pessoa(p.id, p.nome,
-// p.perfil) from Pessoa p order by p.nome"),
-// @NamedQuery(name = "RelatorioPorPerfil", query = "select new Pessoa(p.id,
-// p.nome, p.cpf, p.email, p.dataNascimento, p.sexo, p.perfil) from Pessoa p
-// where p.status = ?1 order by p.perfil") })
 @JsonInclude(value = Include.NON_NULL)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public abstract class Pessoa implements Serializable {
@@ -121,6 +115,10 @@ public abstract class Pessoa implements Serializable {
 	private Biometria biometria;
 
 	public Pessoa() {
+	}
+
+	public Pessoa(String nome) {
+		setNome(nome);
 	}
 
 	public Pessoa(Integer id, String nome, Perfil perfil) {

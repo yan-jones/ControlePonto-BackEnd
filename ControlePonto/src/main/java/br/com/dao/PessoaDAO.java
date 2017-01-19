@@ -18,7 +18,7 @@ public interface PessoaDAO extends CrudRepository<Pessoa, Integer> {
 
 	public Pessoa findByEmail(String email);
 
-	@Query("select new Pessoa(p.id, p.nome, p.cpf, p.email, p.dataNascimento, p.sexo, p.perfil) "
-			+ "from Pessoa p where p.status = ?1 order by p.perfil")
-	public List<Pessoa> relatorioPorPerfil();
+//	@Query("select new Pessoa(p.id, p.nome, p.cpf, p.email, p.dataNascimento, p.sexo, p.perfil) "
+//			+ "from Pessoa p where p.status = ?1 order by p.perfil")
+//	public List<Pessoa> relatorioPorPerfil();
 }

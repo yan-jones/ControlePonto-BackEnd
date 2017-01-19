@@ -10,5 +10,5 @@ import br.com.entity.Equipamento;
 @Repository
 public interface EquipamentoDAO extends CrudRepository<Equipamento, Integer> {
 
-	public List<Equipamento> findAllOrderByTipoEquipamento();
+	public List<Equipamento> findAllByOrderByTipoEquipamento();
 }

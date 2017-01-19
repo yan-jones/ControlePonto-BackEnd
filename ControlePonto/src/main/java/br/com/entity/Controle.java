@@ -68,8 +68,6 @@ public class Controle implements Serializable {
 		setBiometria(biometria);
 	}
 
-	// c.biometria.numero, c.biometria.pessoa.nome, c.id, c.dataEntrada,
-	// c.dataSaida
 	public Controle(Integer id, Timestamp dataEntrada, Timestamp dataSaida, Long numero, String nome) {
 		setId(id);
 		setDataEntrada(dataEntrada);

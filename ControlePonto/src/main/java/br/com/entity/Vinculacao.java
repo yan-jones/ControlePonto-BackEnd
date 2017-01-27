@@ -13,8 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -46,7 +46,7 @@ public class Vinculacao implements Serializable {
 	// @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy",
 	// timezone = "GMT-3")
 	@NotNull
-	@Past
+	@Future
 	private Timestamp dataFinal;
 
 	@ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
